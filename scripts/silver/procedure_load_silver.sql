@@ -45,8 +45,13 @@ BEGIN
 		TRUNCATE TABLE silver.crm_cust_info;
 		PRINT '>> Inserting Data Into: silver.crm_cust_info';
 		INSERT INTO silver.crm_cust_info(
-			cst_id, cst_key, cst_firstname, cst_lastname,
-			cst_marital_status, cst_gndr, cst_create_date
+			cst_id, 
+			cst_key, 
+			cst_firstname, 
+			cst_lastname,
+			cst_marital_status, 
+			cst_gndr, 
+			cst_create_date
 		)
 		SELECT cst_id,cst_key,
 			TRIM(cst_firstname) AS cst_firstname,
@@ -83,7 +88,7 @@ BEGIN
 		PRINT '>> Inserting Data Into: silver.crm_prd_info';
 		INSERT INTO silver.crm_prd_info (
 			prd_id,      
-			cst_id,
+			cat_id,
 			prd_key,
 			prd_nm ,
 			prd_cost,
